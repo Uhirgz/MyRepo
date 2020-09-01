@@ -1,0 +1,182 @@
+
+Jacob Villa@DESKTOP-R50LL6L MINGW64 ~ (Master)
+$ ssh-keygen -t rsa -b 4096 -C "006076053@coyote.csusb.edu"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/Jacob Villa/.ssh/id_rsa):
+/c/Users/Jacob Villa/.ssh/id_rsa already exists.
+Overwrite (y/n)? y
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/Jacob Villa/.ssh/id_rsa
+Your public key has been saved in /c/Users/Jacob Villa/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:a2Xn1lNE4t+fbjWGrMRkrOaZCBS4Wi71GEaf1HJ8/TI 006076053@coyote.csusb.edu
+The key's randomart image is:
++---[RSA 4096]----+
+|    . o   .   . .|
+|   o + + . . . o |
+|  . + = . . . . .|
+|   * +     E . o.|
+|  * =   S B = . +|
+| o o o   * = + ++|
+|  .   . * + + +.+|
+|       o + o  .o |
+|              .. |
++----[SHA256]-----+
+
+Jacob Villa@DESKTOP-R50LL6L MINGW64 ~ (Master)
+$ #start the ssh-agent in the background
+
+Jacob Villa@DESKTOP-R50LL6L MINGW64 ~ (Master)
+$ eval $(ssh-agent -s)
+Agent pid 1222
+
+Jacob Villa@DESKTOP-R50LL6L MINGW64 ~ (Master)
+$ ssh-add ~/.ssh/id_rsa
+Identity added: /c/Users/Jacob Villa/.ssh/id_rsa (006076053@coyote.csusb.edu)
+
+Jacob Villa@DESKTOP-R50LL6L MINGW64 ~ (Master)
+$ clip < ~/.ssh/id_rsa.pub
+
+Jacob Villa@DESKTOP-R50LL6L MINGW64 ~ (Master)
+$ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDRvRW/koio306P5gzHAMuDxtN4HXtFAlqf7qbQol5GIV9inS2xEgo1eM62w2Hn3lC4OUpCZHfzUfZly0VFqeA2gnQFVCdgOTa8FqZSIspJg/LcTRD6B2lpl35/Mll8RRurkPWAIpLcod2PFOjopTWdGXAaTW2au6u1zFjAyU9zte6UkJMFjvBkspsmXcBEw6CCjVQ+YxUvPQuhvDBRZ+5cyZ6K+FHZRpcSJFU5q6nLBbhtyrLjf3OkQUl6y6VGfbHYAwYbTi/MBUs6/vuMCC8BzjySp+lNWDk2JLclUKW0hlF22GKhToa80LJDmTtXuDt1sI3nicRtiaQG/BmyOzsa1trgIL9jYuzid1SPmCXVORvXnS/Yfm/Xz/uMjx6idIf8ETSz1g+wp+znktDzEd46XGiSMu220m3NOiuPnpD6rpdsogr6l2N4AdgL4a2E4X0Y7fymXeLvipcbDlZf2jcaJUo5c83yxTfqteM4grDzWUZX/lBSuY4OMCWReYJQuvK4Wgd/mtSr+g1uTV/yCT0ncZ0+8ICYoSuafe6WM0f1gPeRLm286KqmLNwB1vatfsKBFqcCrkGTtAPeKd3RzTp16F6tKCxgPkn8zRgN1UyGaf03pmxXWYW8/gcfN8qxDOXMVv43cw4PA+ydv4ggxJnFX2URMkpx7TAzAiOfcGfI7w== 006076053@coyote.csusb.edu
+bash: ssh-rsa: command not found
+
+Jacob Villa@DESKTOP-R50LL6L MINGW64 ~ (Master)
+$ git remote add origin git@github.com:Uhirgz/MyRepo.git
+fatal: remote origin already exists.
+
+Jacob Villa@DESKTOP-R50LL6L MINGW64 ~ (Master)
+$ rm origin
+rm: cannot remove 'origin': No such file or directory
+
+Jacob Villa@DESKTOP-R50LL6L MINGW64 ~ (Master)
+$ git branch -M Master
+
+Jacob Villa@DESKTOP-R50LL6L MINGW64 ~ (Master)
+$ git push -u origin Master
+ERROR: Repository not found.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+Jacob Villa@DESKTOP-R50LL6L MINGW64 ~ (Master)
+$ git remote add oregon git@github.com:Uhirgz/MyRepo.git
+
+Jacob Villa@DESKTOP-R50LL6L MINGW64 ~ (Master)
+$ git branch -M Master
+
+Jacob Villa@DESKTOP-R50LL6L MINGW64 ~ (Master)
+$ git push -u oregon Master
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 304 bytes | 76.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:Uhirgz/MyRepo.git
+ * [new branch]      Master -> Master
+Branch 'Master' set up to track remote branch 'Master' from 'oregon'.
+
+Jacob Villa@DESKTOP-R50LL6L MINGW64 ~ (Master)
+$ touch first.txt
+
+Jacob Villa@DESKTOP-R50LL6L MINGW64 ~ (Master)
+$ git add first.txt
+
+Jacob Villa@DESKTOP-R50LL6L MINGW64 ~ (Master)
+$ git commit -m "OREGON WORKED"
+[Master 12368b7] OREGON WORKED
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 first.txt
+
+Jacob Villa@DESKTOP-R50LL6L MINGW64 ~ (Master)
+$ git push
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 291 bytes | 72.00 KiB/s, done.
+Total 2 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:Uhirgz/MyRepo.git
+   93a1fb8..12368b7  Master -> Master
+
+Jacob Villa@DESKTOP-R50LL6L MINGW64 ~ (Master)
+$ touch ACTUALREADME.md
+
+Jacob Villa@DESKTOP-R50LL6L MINGW64 ~ (Master)
+$ git add ACTUALREADME.md
+
+Jacob Villa@DESKTOP-R50LL6L MINGW64 ~ (Master)
+$ git commit -m "With enough time I was able to establish a working link between my repositories. My main issue was initializing repositories without creating an SSH key, prompting many, many issues. 'oregon' is my 'origin'. Thank you."
+[Master 7154f6c] With enough time I was able to establish a working link between my repositories. My main issue was initializing repositories without creating an SSH key, prompting many, many issues. 'oregon' is my 'origin'. Thank you.
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 ACTUALREADME.md
+
+Jacob Villa@DESKTOP-R50LL6L MINGW64 ~ (Master)
+$ git push
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 423 bytes | 141.00 KiB/s, done.
+Total 2 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:Uhirgz/MyRepo.git
+   12368b7..7154f6c  Master -> Master
+
+Jacob Villa@DESKTOP-R50LL6L MINGW64 ~ (Master)
+$ git status
+warning: could not open directory 'Application Data/': Permission denied
+warning: could not open directory 'Cookies/': Permission denied
+warning: could not open directory 'Local Settings/': Permission denied
+warning: could not open directory 'My Documents/': Permission denied
+warning: could not open directory 'NetHood/': Permission denied
+warning: could not open directory 'PrintHood/': Permission denied
+warning: could not open directory 'Recent/': Permission denied
+warning: could not open directory 'SendTo/': Permission denied
+warning: could not open directory 'Start Menu/': Permission denied
+warning: could not open directory 'Templates/': Permission denied
+On branch Master
+Your branch is up to date with 'oregon/Master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .argouml/
+        .bash_history
+        .gitconfig
+        .minttyrc
+        .ssh/
+        .viminfo
+        3D Objects/
+        AppData/
+        Contacts/
+        Desktop/
+        Documents/
+        Downloads/
+        Favorites/
+        Links/
+        MicrosoftEdgeBackups/
+        Music/
+        NTUSER.DAT
+        NTUSER.DAT{01f62333-ed9e-11e9-ad41-f991e5614e96}.TxR.0.regtrans-ms
+        NTUSER.DAT{01f62333-ed9e-11e9-ad41-f991e5614e96}.TxR.1.regtrans-ms
+        NTUSER.DAT{01f62333-ed9e-11e9-ad41-f991e5614e96}.TxR.2.regtrans-ms
+        NTUSER.DAT{01f62333-ed9e-11e9-ad41-f991e5614e96}.TxR.blf
+        NTUSER.DAT{01f62334-ed9e-11e9-ad41-f991e5614e96}.TM.blf
+        NTUSER.DAT{01f62334-ed9e-11e9-ad41-f991e5614e96}.TMContainer00000000000000000001.regtrans-ms
+        NTUSER.DAT{01f62334-ed9e-11e9-ad41-f991e5614e96}.TMContainer00000000000000000002.regtrans-ms
+        OneDrive/
+        Pictures/
+        Saved Games/
+        Searches/
+        Videos/
+        iCloudDrive/
+        ntuser.dat.LOG1
+        ntuser.dat.LOG2
+        ntuser.ini
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Jacob Villa@DESKTOP-R50LL6L MINGW64 ~ (Master)
+$
